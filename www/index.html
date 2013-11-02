@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>Chicago Bike Laws</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="styles/jquery.mobile-1.4.0-rc.1.css">
+<link rel="stylesheet" href="styles/styles.css">
+<script src="cordova.js"></script>
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery.ba-bbq.min.js"></script>
+<script src="js/laws.js"></script>
+<script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="full_reference">
+		<div id="content" data-role="content" class="small">
+			<div id='body_area' style="display:none;" class="lawBodyArea allowCopyPaste"></div>
+			<ul data-role="listview" data-inset="false" data-filter="true" id="codes" data-filter-placeholder="Search Chicago and Illinois laws..." class='wrapme'>
+				<li>Loading laws...</li>
+			</ul>
+		</div><!-- /content -->
+		<div data-role="footer" data-position="fixed">		
+		  <div data-role="navbar">
+		    <ul>
+		      <li><a href="#full_reference" class="ui-btn-active ui-state-persist" data-icon="star">Full</a></li>
+		      <li><a href="#quick_reference" data-icon="check">Quick</a></li>
+		      <li><a href="#info" data-icon="info">Info</a></li>
+		    </ul>
+		  </div><!-- /navbar -->
+		</div><!-- /footer -->
+	</div> <!-- /page -->
+	<div data-role="page" id="info"> 
+	<div data-role="header" data-position="inline">
+		<h1>Info</h1>
+	</div><!-- /header -->
+	<div id="content" data-role="content" class="small">
+		<ul data-role="listview" data-inset="true" class="wrap-listitem" style="display:none;" id="storeListview">
+		      <li><a class='newWindowUrl storeUrl' href="#"><img src="images/icon.png"><h3 class='storeName'></h3><p class='storeMessage'></p></a></li>
+		</ul>
+		<h2>Get Lit</h2>
+			<p>You should use a white headlight at night so people can see you from all directions.</p>
+			<ul data-role="listview" data-inset="true" class="wrap-listitem">
+		      <li><a onclick="window.open('http://bikechi.com/operations/redirect.php?source=bikesontransit&destination=amazon_dahon','_system')" href="#"><img src="images/dahon-bike_160x160.png"><h3>Dahon Speed Uno folding bike</h3><p>Folding single-speed bike with rear coaster brake. Ideal for urban commuting on flat streets.</p></a></li>
+		      <li><a onclick="window.open('http://bikechi.com/operations/redirect.php?source=bikesontransit&destination=amazon_bikebag','_system')" href="#"><img src="images/bike-bag_160x160.png"><h3>Nashbar bike bag</h3><p>Carries a folding bike and additional supplies (like clothing).</p></a></li>
+			</ul>
+		<h2>Disclaimer</h2>
+			<p>The Municipal Code of Chicago and Illinois Compiled Statutes that appear here may not reflect the most current legislation adopted by the City of Chicago or State of Illinois. Chicago Bike Guide provides this list for informational purposes only. The above information should not be relied upon as the definitive authority for local legislation.</p>
+			<ul class='list'>
+				<li><a onclick="window.open('http://bikechi.com/operations/redirect.php?source=laws&destination=laws_chicago','_system')" href="#">Municipal Code of Chicago</a></li>
+				<li><a onclick="window.open('http://bikechi.com/operations/redirect.php?source=laws&destination=laws_illinois','_system')" href="#">Illinois Compiled Statutes</a></li>
+			</ul>
+		<h2>About</h2>
+			<p>Chicago Bike Laws gives you a pocket reference to all of the Chicago and Illinois laws about bicycling and walking. It was created by Steven Vance in November 2013.</p>
+			<p>You're using version 1.0, released on November 2, 2013.</p>
+			<ul class='list'>
+				<li>Visit <a onclick="window.open('http://bikechi.com/operations/redirect.php?source=lawsapp&destination=offlinebikemapdotcom','_system')" href="#">BikeCHI.com</a> for app updates</li>
+				<li>Email <a href="mailto:info@bikechi.com" target="_blank">info@bikechi.com</a> for support</li>
+				<li>Twitter: <a onclick="window.open('http://bikechi.com/operations/redirect.php?source=lawsapp&destination=twitter_bikemapapp','_system')" href="#">@bikemapapp</a></li>
+				<li>Facebook: <a onclick="window.open('http://bikechi.com/operations/redirect.php?source=lawsapp&destination=facebook_bikemapapp','_system')" href="#">/ChicagoBikeGuide</a></li>
+			</ul>
+		</div><!-- /content -->
+		<div data-role="footer" data-position="fixed">		
+		  <div data-role="navbar">
+		    <ul>
+		      <li><a href="#full_reference" data-icon="star">Full</a></li>
+		      <li><a href="#quick_reference" data-icon="check">Quick</a></li>
+		      <li><a href="#info" class="ui-btn-active ui-state-persist" data-icon="info">Info</a></li>
+		    </ul>
+		  </div><!-- /navbar -->
+		</div><!-- /footer -->
+	</div><!-- /page -->
+	<div data-role="page" id="quick_reference"> 
+	<div data-role="header" data-position="inline">
+		<h1>Quick Reference</h1>
+	</div><!-- /header -->
+	<div id="content" data-role="content" class="small">
+		<ul data-role="listview" data-inset="false" class="wrapme">
+			<li>
+				<a href="javascript:showLaw(24)">
+				<h3>Lights</h3>
+				<p>At night, bicycles must be equipped with a white front light visible at 500 feet and a rear red reflector (or rear red light visible at 200 feet). Buy some lights today...<br />Chicago: 9-52-080 (a)</p>
+				</a>
+			</li>
+			<li>
+				<h3>Brakes</h3>
+				<p>Your bicycle must have a brake that can make the bicycle skid.<br />MCC: 9-52-080 (b)</p>
+			</li>
+			<li>
+				<h3>Parking</h3>
+				<p>You can park your bike on any sign pole, bike rack, or parking meter. You can also park against a curb or building "in such manner as to afford the least obstruction to pedestrian traffic".<br />MCC: 9-52-070</p>
+			</li>
+			<li>
+				<a href="javascript:showLaw(15);">
+					<h3>Sidewalks</h3>
+					<p>Don't bike on the sidewalks unless you're 11 or younger or it's a marked bike route.</p>
+					<p>Chicago: 9-52-020</p>
+				</a>
+			</li>
+		   <li>
+			   	<h3>Turn Signals</h3>
+			   	<p>Make a turn signal at least 100 feet before you intend to turn. Extend your left arm to indicate a left turn; extend your right arm to indicate a right turn.<br />ILCS: 11-15-1511, 11-8-806</p>
+		   	</li>
+			<li>
+				<h3>Take The Lane</h3>
+				<p>You can ride in the center of a lane when the path is blocked, unsafe, or when there's not enough room for automobile drivers to safely pass you.<br />ILCS: 11-15-1505</p>
+			</li>
+			<li>
+				<h3>Ride With Traffic</h3>
+				<p>Don't ride against traffic, including on one-way streets. There are some instances where you can ride against traffic on a one-way street but these are clearly marked.<br />ILCS: 11-15-1502</p>
+			</li>
+			<li>
+				<h3>Signs and Signals</h3>
+				<p>Bicyclists must obey all traffic signs and signals on the road (except where bicycles are explicitly excepted).<br />ILCS: 11-15-1502</p>
+			</li>
+			<li>
+				<a href="javascript:showLaw(28);">
+					<h3>Doorings</h3>
+					<p>Avoid getting doored – running into or getting hit by a car door – by riding 4 feet away from parked cars. It's illegal to open a car door into moving traffic. If you get doored, consider it a crash and follow the procedures in <i>Crashed? Do This</i>. If you are doored by a taxi passenger, they are at fault, but collect everyone's information.
+					<p>Chicago: 9-80-035</p>
+				</a>
+			</li>
+			<li>
+				<h3>3 Feet Passing</h3><p>Not for bicycling: automobile drivers must pass you at least 3 feet away. In many crashes, this is the minimum citation the driver will receive.<br />MCC: 9-36-010 (c)</p>
+			</li>
+			<li>
+				<h3>Left Turns</h3><p>There are two ways to turn left: merge into the left-most lane and turn from there; or, make a box turn by proceeding across the intersection, reorienting your bike towards the left (in the cross direction), and going straight after obeying traffic signals.<br />ILCS: 11-15-1510</p>
+			</li>
+			<li>
+				<h3>Drinking and Cycling</h3><p>You can't get a DUI*, but you can still get citations for being intoxicated in public or having an open alcohol container. * DUIs can only be given to "vehicle" operators and a bicycle is a "device", not a "vehicle".</p>
+			</li>
+		</ul>
+	</div><!-- /content -->
+		<div data-role="footer" data-position="fixed">		
+	  <div data-role="navbar">
+	    <ul>
+	      <li><a href="#full_reference" data-icon="star">Full</a></li>
+	      <li><a href="#quick_reference" class="ui-btn-active ui-state-persist" data-icon="check">Quick</a></li>
+	      <li><a href="#info" data-icon="info">Info</a></li>
+	    </ul>
+	  </div><!-- /navbar -->
+	</div><!-- /page -->
+<script>
+$(".wrapme p").css("white-space","normal");
+//$(".wrapme a").css("white-space","normal");
+$("#codes").listview ("refresh");
+</script>
+</body>
+</html>

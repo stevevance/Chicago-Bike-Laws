@@ -1,0 +1,13 @@
+/* wrap wide text blocks; jQuery Mobile cuts them off */
+.wrap-listitem p, .wrap-listitem li, .wrap-listitem h1, .wrap-listitem h2, .wrap-listitem h3, .wrapme {
+	white-space: normal;
+	/*white-space:  pre-wrap;*/
+}
+.list ul, .list ol, .list li {
+	line-height: 140%;
+	list-style: none;
+}
+.list {
+	margin-left:0;
+	padding-left:1em;
+}
